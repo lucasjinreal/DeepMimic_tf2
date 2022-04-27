@@ -1,0 +1,370 @@
+TensorFlow 2.0 Upgrade Script
+-----------------------------
+Converted 24 files
+Detected 8 issues that require attention
+--------------------------------------------------------------------------------
+--------------------------------------------------------------------------------
+File: learning/tf_distribution_gaussian_diag.py
+--------------------------------------------------------------------------------
+learning/tf_distribution_gaussian_diag.py:208:25: WARNING: tf.get_variable requires manual check. tf.get_variable returns ResourceVariables by default in 2.0, which have well-defined semantics and are stricter about shapes. You can disable this behavior by passing use_resource=False, or by calling tf.compat.v1.disable_resource_variables().
+--------------------------------------------------------------------------------
+File: learning/tf_agent.py
+--------------------------------------------------------------------------------
+learning/tf_agent.py:30:28: WARNING: *.save requires manual check. (This warning is only applicable if the code saves a tf.Keras model) Keras model.save now saves to the Tensorflow SavedModel format by default, instead of HDF5. To continue saving to HDF5, add the argument save_format='h5' to the save() function.
+--------------------------------------------------------------------------------
+File: learning/tf_normalizer.py
+--------------------------------------------------------------------------------
+learning/tf_normalizer.py:45:24: WARNING: tf.get_variable requires manual check. tf.get_variable returns ResourceVariables by default in 2.0, which have well-defined semantics and are stricter about shapes. You can disable this behavior by passing use_resource=False, or by calling tf.compat.v1.disable_resource_variables().
+learning/tf_normalizer.py:46:23: WARNING: tf.get_variable requires manual check. tf.get_variable returns ResourceVariables by default in 2.0, which have well-defined semantics and are stricter about shapes. You can disable this behavior by passing use_resource=False, or by calling tf.compat.v1.disable_resource_variables().
+learning/tf_normalizer.py:47:22: WARNING: tf.get_variable requires manual check. tf.get_variable returns ResourceVariables by default in 2.0, which have well-defined semantics and are stricter about shapes. You can disable this behavior by passing use_resource=False, or by calling tf.compat.v1.disable_resource_variables().
+learning/tf_normalizer.py:49:24: WARNING: tf.get_variable requires manual check. tf.get_variable returns ResourceVariables by default in 2.0, which have well-defined semantics and are stricter about shapes. You can disable this behavior by passing use_resource=False, or by calling tf.compat.v1.disable_resource_variables().
+learning/tf_normalizer.py:50:23: WARNING: tf.get_variable requires manual check. tf.get_variable returns ResourceVariables by default in 2.0, which have well-defined semantics and are stricter about shapes. You can disable this behavior by passing use_resource=False, or by calling tf.compat.v1.disable_resource_variables().
+learning/tf_normalizer.py:51:22: WARNING: tf.get_variable requires manual check. tf.get_variable returns ResourceVariables by default in 2.0, which have well-defined semantics and are stricter about shapes. You can disable this behavior by passing use_resource=False, or by calling tf.compat.v1.disable_resource_variables().
+================================================================================
+Detailed log follows:
+
+================================================================================
+================================================================================
+Input tree: 'learning/'
+================================================================================
+--------------------------------------------------------------------------------
+Processing file 'learning/rl_util.py'
+ outputting to 'learning2/rl_util.py'
+--------------------------------------------------------------------------------
+
+
+--------------------------------------------------------------------------------
+
+--------------------------------------------------------------------------------
+Processing file 'learning/tf_util.py'
+ outputting to 'learning2/tf_util.py'
+--------------------------------------------------------------------------------
+
+5:21: INFO: Changing tf.contrib.layers xavier initializer to a tf.compat.v1.keras.initializers.VarianceScaling and converting arguments.
+
+24:12: INFO: Added keywords to args of function 'tf.gradients'
+30:13: INFO: Renamed 'tf.variable_scope' to 'tf.compat.v1.variable_scope'
+31:22: INFO: Renamed 'tf.layers.dense' to 'tf.compat.v1.layers.dense'
+47:12: INFO: Added keywords to args of function 'tf.gradients'
+53:10: INFO: Changed tf.to_float call to tf.cast(..., dtype=tf.float32).
+53:22: INFO: Added keywords to args of function 'tf.shape'
+60:21: INFO: Added keywords to args of function 'tf.reduce_sum'
+61:48: INFO: Added keywords to args of function 'tf.reduce_sum'
+61:62: INFO: Renamed 'tf.log' to 'tf.math.log'
+68:16: INFO: Added keywords to args of function 'tf.reduce_sum'
+69:18: INFO: Added keywords to args of function 'tf.reduce_sum'
+71:17: INFO: Added keywords to args of function 'tf.reduce_mean'
+79:16: INFO: Added keywords to args of function 'tf.reduce_sum'
+79:67: INFO: Added keywords to args of function 'tf.reduce_sum'
+80:17: INFO: Added keywords to args of function 'tf.reduce_mean'
+90:21: INFO: Renamed 'tf.placeholder' to 'tf.compat.v1.placeholder'
+96:27: INFO: Renamed 'tf.assign' to 'tf.compat.v1.assign'
+--------------------------------------------------------------------------------
+
+--------------------------------------------------------------------------------
+Processing file 'learning/normalizer.py'
+ outputting to 'learning2/normalizer.py'
+--------------------------------------------------------------------------------
+
+
+--------------------------------------------------------------------------------
+
+--------------------------------------------------------------------------------
+Processing file 'learning/path.py'
+ outputting to 'learning2/path.py'
+--------------------------------------------------------------------------------
+
+
+--------------------------------------------------------------------------------
+
+--------------------------------------------------------------------------------
+Processing file 'learning/rl_agent.py'
+ outputting to 'learning2/rl_agent.py'
+--------------------------------------------------------------------------------
+
+
+--------------------------------------------------------------------------------
+
+--------------------------------------------------------------------------------
+Processing file 'learning/agent_builder.py'
+ outputting to 'learning2/agent_builder.py'
+--------------------------------------------------------------------------------
+
+
+--------------------------------------------------------------------------------
+
+--------------------------------------------------------------------------------
+Processing file 'learning/pg_agent.py'
+ outputting to 'learning2/pg_agent.py'
+--------------------------------------------------------------------------------
+
+72:21: INFO: Renamed 'tf.placeholder' to 'tf.compat.v1.placeholder'
+73:27: INFO: Renamed 'tf.placeholder' to 'tf.compat.v1.placeholder'
+74:23: INFO: Renamed 'tf.placeholder' to 'tf.compat.v1.placeholder'
+75:21: INFO: Renamed 'tf.placeholder' to 'tf.compat.v1.placeholder'
+76:21: INFO: Renamed 'tf.placeholder' to 'tf.compat.v1.placeholder'
+78:13: INFO: Renamed 'tf.variable_scope' to 'tf.compat.v1.variable_scope'
+107:37: INFO: Added keywords to args of function 'tf.reduce_mean'
+113:31: INFO: Added keywords to args of function 'tf.reduce_mean'
+130:21: INFO: Renamed 'tf.train.MomentumOptimizer' to 'tf.compat.v1.train.MomentumOptimizer'
+131:31: INFO: Added keywords to args of function 'tf.gradients'
+135:20: INFO: Renamed 'tf.train.MomentumOptimizer' to 'tf.compat.v1.train.MomentumOptimizer'
+136:30: INFO: Added keywords to args of function 'tf.gradients'
+142:13: INFO: Renamed 'tf.variable_scope' to 'tf.compat.v1.variable_scope'
+148:31: INFO: tf.random_uniform_initializer requires manual check. Initializers no longer have the dtype argument in the constructor or partition_info argument in the __call__ method.
+The calls have been converted to compat.v1 for safety (even though they may already have been correct).
+148:31: INFO: Renamed 'tf.random_uniform_initializer' to 'tf.compat.v1.random_uniform_initializer'
+149:29: INFO: tf.zeros_initializer requires manual check. Initializers no longer have the dtype argument in the constructor or partition_info argument in the __call__ method.
+The calls have been converted to compat.v1 for safety (even though they may already have been correct).
+149:29: INFO: Renamed 'tf.zeros_initializer' to 'tf.compat.v1.zeros_initializer'
+150:33: INFO: tf.random_uniform_initializer requires manual check. Initializers no longer have the dtype argument in the constructor or partition_info argument in the __call__ method.
+The calls have been converted to compat.v1 for safety (even though they may already have been correct).
+150:33: INFO: Renamed 'tf.random_uniform_initializer' to 'tf.compat.v1.random_uniform_initializer'
+164:13: INFO: Renamed 'tf.variable_scope' to 'tf.compat.v1.variable_scope'
+166:21: INFO: Renamed 'tf.layers.dense' to 'tf.compat.v1.layers.dense'
+167:55: INFO: Changing tf.contrib.layers xavier initializer to a tf.compat.v1.keras.initializers.VarianceScaling and converting arguments.
+
+--------------------------------------------------------------------------------
+
+--------------------------------------------------------------------------------
+Processing file 'learning/replay_buffer_rand_storage.py'
+ outputting to 'learning2/replay_buffer_rand_storage.py'
+--------------------------------------------------------------------------------
+
+
+--------------------------------------------------------------------------------
+
+--------------------------------------------------------------------------------
+Processing file 'learning/tf_distribution_gaussian_diag.py'
+ outputting to 'learning2/tf_distribution_gaussian_diag.py'
+--------------------------------------------------------------------------------
+
+35:34: INFO: Changing tf.contrib.layers xavier initializer to a tf.compat.v1.keras.initializers.VarianceScaling and converting arguments.
+
+36:32: INFO: tf.zeros_initializer requires manual check. Initializers no longer have the dtype argument in the constructor or partition_info argument in the __call__ method.
+The calls have been converted to compat.v1 for safety (even though they may already have been correct).
+36:32: INFO: Renamed 'tf.zeros_initializer' to 'tf.compat.v1.zeros_initializer'
+37:36: INFO: Changing tf.contrib.layers xavier initializer to a tf.compat.v1.keras.initializers.VarianceScaling and converting arguments.
+
+38:34: INFO: tf.zeros_initializer requires manual check. Initializers no longer have the dtype argument in the constructor or partition_info argument in the __call__ method.
+The calls have been converted to compat.v1 for safety (even though they may already have been correct).
+38:34: INFO: Renamed 'tf.zeros_initializer' to 'tf.compat.v1.zeros_initializer'
+56:13: INFO: Renamed 'tf.variable_scope' to 'tf.compat.v1.variable_scope'
+99:24: INFO: Added keywords to args of function 'tf.shape'
+110:25: INFO: Added keywords to args of function 'tf.reduce_sum'
+111:60: INFO: Added keywords to args of function 'tf.reduce_sum'
+120:16: INFO: Added keywords to args of function 'tf.reduce_sum'
+125:16: INFO: Added keywords to args of function 'tf.reduce_sum'
+134:19: INFO: Added keywords to args of function 'tf.shape'
+135:16: INFO: Renamed 'tf.random_normal' to 'tf.random.normal'
+148:19: INFO: Added keywords to args of function 'tf.shape'
+149:16: INFO: Renamed 'tf.random_normal' to 'tf.random.normal'
+158:19: INFO: Added keywords to args of function 'tf.shape'
+160:32: INFO: Renamed 'tf.random_normal' to 'tf.random.normal'
+177:14: INFO: Added keywords to args of function 'tf.reduce_sum'
+178:21: INFO: Added keywords to args of function 'tf.reduce_mean'
+186:25: INFO: Added keywords to args of function 'tf.convert_to_tensor'
+189:67: INFO: Added keywords to args of function 'tf.shape'
+191:27: INFO: Added keywords to args of function 'tf.convert_to_tensor'
+198:15: INFO: Renamed 'tf.layers.dense' to 'tf.compat.v1.layers.dense'
+206:17: INFO: Renamed 'tf.variable_scope' to 'tf.compat.v1.variable_scope'
+208:25: WARNING: tf.get_variable requires manual check. tf.get_variable returns ResourceVariables by default in 2.0, which have well-defined semantics and are stricter about shapes. You can disable this behavior by passing use_resource=False, or by calling tf.compat.v1.disable_resource_variables().
+208:25: INFO: Renamed 'tf.get_variable' to 'tf.compat.v1.get_variable'
+213:21: INFO: Renamed 'tf.layers.dense' to 'tf.compat.v1.layers.dense'
+224:17: INFO: Added keywords to args of function 'tf.reduce_sum'
+--------------------------------------------------------------------------------
+
+--------------------------------------------------------------------------------
+Processing file 'learning/tf_agent.py'
+ outputting to 'learning2/tf_agent.py'
+--------------------------------------------------------------------------------
+
+16:20: INFO: Renamed 'tf.Session' to 'tf.compat.v1.Session'
+30:28: WARNING: *.save requires manual check. (This warning is only applicable if the code saves a tf.Keras model) Keras model.save now saves to the Tensorflow SavedModel format by default, instead of HDF5. To continue saving to HDF5, add the argument save_format='h5' to the save() function.
+55:17: INFO: Renamed 'tf.variable_scope' to 'tf.compat.v1.variable_scope'
+58:21: INFO: Renamed 'tf.variable_scope' to 'tf.compat.v1.variable_scope'
+88:18: INFO: Renamed 'tf.get_collection' to 'tf.compat.v1.get_collection'
+88:36: INFO: Renamed 'tf.GraphKeys' to 'tf.compat.v1.GraphKeys'
+93:62: INFO: Renamed 'tf.variable_scope' to 'tf.compat.v1.variable_scope'
+94:17: INFO: Renamed 'tf.variable_scope' to 'tf.compat.v1.variable_scope'
+119:22: INFO: Renamed 'tf.global_variables_initializer' to 'tf.compat.v1.global_variables_initializer'
+124:21: INFO: Renamed 'tf.train.Saver' to 'tf.compat.v1.train.Saver'
+129:19: INFO: Renamed 'tf.get_collection' to 'tf.compat.v1.get_collection'
+129:37: INFO: Renamed 'tf.GraphKeys' to 'tf.compat.v1.GraphKeys'
+--------------------------------------------------------------------------------
+
+--------------------------------------------------------------------------------
+Processing file 'learning/tf_distribution.py'
+ outputting to 'learning2/tf_distribution.py'
+--------------------------------------------------------------------------------
+
+59:14: INFO: Added keywords to args of function 'tf.reduce_sum'
+60:21: INFO: Added keywords to args of function 'tf.reduce_mean'
+--------------------------------------------------------------------------------
+
+--------------------------------------------------------------------------------
+Processing file 'learning/ppo_agent.py'
+ outputting to 'learning2/ppo_agent.py'
+--------------------------------------------------------------------------------
+
+65:21: INFO: Renamed 'tf.placeholder' to 'tf.compat.v1.placeholder'
+66:21: INFO: Renamed 'tf.placeholder' to 'tf.compat.v1.placeholder'
+67:21: INFO: Renamed 'tf.placeholder' to 'tf.compat.v1.placeholder'
+68:28: INFO: Renamed 'tf.placeholder' to 'tf.compat.v1.placeholder'
+69:27: INFO: Renamed 'tf.placeholder' to 'tf.compat.v1.placeholder'
+70:23: INFO: Renamed 'tf.placeholder' to 'tf.compat.v1.placeholder'
+72:13: INFO: Renamed 'tf.variable_scope' to 'tf.compat.v1.variable_scope'
+101:37: INFO: Added keywords to args of function 'tf.reduce_mean'
+110:31: INFO: Added keywords to args of function 'tf.reduce_mean'
+113:29: INFO: Added keywords to args of function 'tf.reduce_mean'
+113:44: INFO: Changed tf.to_float call to tf.cast(..., dtype=tf.float32).
+130:21: INFO: Renamed 'tf.train.MomentumOptimizer' to 'tf.compat.v1.train.MomentumOptimizer'
+131:31: INFO: Added keywords to args of function 'tf.gradients'
+135:20: INFO: Renamed 'tf.train.MomentumOptimizer' to 'tf.compat.v1.train.MomentumOptimizer'
+136:30: INFO: Added keywords to args of function 'tf.gradients'
+--------------------------------------------------------------------------------
+
+--------------------------------------------------------------------------------
+Processing file 'learning/amp_agent.py'
+ outputting to 'learning2/amp_agent.py'
+--------------------------------------------------------------------------------
+
+81:62: INFO: Renamed 'tf.variable_scope' to 'tf.compat.v1.variable_scope'
+82:17: INFO: Renamed 'tf.variable_scope' to 'tf.compat.v1.variable_scope'
+114:34: INFO: Renamed 'tf.placeholder' to 'tf.compat.v1.placeholder'
+115:33: INFO: Renamed 'tf.placeholder' to 'tf.compat.v1.placeholder'
+120:13: INFO: Renamed 'tf.variable_scope' to 'tf.compat.v1.variable_scope'
+121:17: INFO: Renamed 'tf.variable_scope' to 'tf.compat.v1.variable_scope'
+129:35: INFO: Added keywords to args of function 'tf.reduce_mean'
+130:34: INFO: Added keywords to args of function 'tf.reduce_mean'
+143:30: INFO: Added keywords to args of function 'tf.reduce_mean'
+144:29: INFO: Added keywords to args of function 'tf.reduce_mean'
+148:30: INFO: Added keywords to args of function 'tf.reduce_mean'
+149:29: INFO: Added keywords to args of function 'tf.reduce_mean'
+172:19: INFO: Renamed 'tf.train.MomentumOptimizer' to 'tf.compat.v1.train.MomentumOptimizer'
+173:29: INFO: Added keywords to args of function 'tf.gradients'
+181:20: INFO: Renamed 'tf.layers.dense' to 'tf.compat.v1.layers.dense'
+182:51: INFO: tf.random_uniform_initializer requires manual check. Initializers no longer have the dtype argument in the constructor or partition_info argument in the __call__ method.
+The calls have been converted to compat.v1 for safety (even though they may already have been correct).
+182:51: INFO: Renamed 'tf.random_uniform_initializer' to 'tf.compat.v1.random_uniform_initializer'
+205:18: INFO: Added keywords to args of function 'tf.reduce_sum'
+206:24: INFO: Added keywords to args of function 'tf.reduce_mean'
+252:24: INFO: Added keywords to args of function 'tf.reduce_sum'
+256:24: INFO: Added keywords to args of function 'tf.reduce_sum'
+--------------------------------------------------------------------------------
+
+--------------------------------------------------------------------------------
+Processing file 'learning/exp_params.py'
+ outputting to 'learning2/exp_params.py'
+--------------------------------------------------------------------------------
+
+
+--------------------------------------------------------------------------------
+
+--------------------------------------------------------------------------------
+Processing file 'learning/rl_world.py'
+ outputting to 'learning2/rl_world.py'
+--------------------------------------------------------------------------------
+
+
+--------------------------------------------------------------------------------
+
+--------------------------------------------------------------------------------
+Processing file 'learning/replay_buffer.py'
+ outputting to 'learning2/replay_buffer.py'
+--------------------------------------------------------------------------------
+
+
+--------------------------------------------------------------------------------
+
+--------------------------------------------------------------------------------
+Processing file 'learning/__init__.py'
+ outputting to 'learning2/__init__.py'
+--------------------------------------------------------------------------------
+
+
+--------------------------------------------------------------------------------
+
+--------------------------------------------------------------------------------
+Processing file 'learning/tf_normalizer.py'
+ outputting to 'learning2/tf_normalizer.py'
+--------------------------------------------------------------------------------
+
+13:13: INFO: Renamed 'tf.variable_scope' to 'tf.compat.v1.variable_scope'
+45:24: WARNING: tf.get_variable requires manual check. tf.get_variable returns ResourceVariables by default in 2.0, which have well-defined semantics and are stricter about shapes. You can disable this behavior by passing use_resource=False, or by calling tf.compat.v1.disable_resource_variables().
+45:24: INFO: Renamed 'tf.get_variable' to 'tf.compat.v1.get_variable'
+46:23: WARNING: tf.get_variable requires manual check. tf.get_variable returns ResourceVariables by default in 2.0, which have well-defined semantics and are stricter about shapes. You can disable this behavior by passing use_resource=False, or by calling tf.compat.v1.disable_resource_variables().
+46:23: INFO: Renamed 'tf.get_variable' to 'tf.compat.v1.get_variable'
+47:22: WARNING: tf.get_variable requires manual check. tf.get_variable returns ResourceVariables by default in 2.0, which have well-defined semantics and are stricter about shapes. You can disable this behavior by passing use_resource=False, or by calling tf.compat.v1.disable_resource_variables().
+47:22: INFO: Renamed 'tf.get_variable' to 'tf.compat.v1.get_variable'
+49:24: WARNING: tf.get_variable requires manual check. tf.get_variable returns ResourceVariables by default in 2.0, which have well-defined semantics and are stricter about shapes. You can disable this behavior by passing use_resource=False, or by calling tf.compat.v1.disable_resource_variables().
+49:24: INFO: Renamed 'tf.get_variable' to 'tf.compat.v1.get_variable'
+50:23: WARNING: tf.get_variable requires manual check. tf.get_variable returns ResourceVariables by default in 2.0, which have well-defined semantics and are stricter about shapes. You can disable this behavior by passing use_resource=False, or by calling tf.compat.v1.disable_resource_variables().
+50:23: INFO: Renamed 'tf.get_variable' to 'tf.compat.v1.get_variable'
+51:22: WARNING: tf.get_variable requires manual check. tf.get_variable returns ResourceVariables by default in 2.0, which have well-defined semantics and are stricter about shapes. You can disable this behavior by passing use_resource=False, or by calling tf.compat.v1.disable_resource_variables().
+51:22: INFO: Renamed 'tf.get_variable' to 'tf.compat.v1.get_variable'
+--------------------------------------------------------------------------------
+
+--------------------------------------------------------------------------------
+Processing file 'learning/solvers/solver.py'
+ outputting to 'learning2/solvers/solver.py'
+--------------------------------------------------------------------------------
+
+
+--------------------------------------------------------------------------------
+
+--------------------------------------------------------------------------------
+Processing file 'learning/solvers/mpi_solver.py'
+ outputting to 'learning2/solvers/mpi_solver.py'
+--------------------------------------------------------------------------------
+
+83:22: INFO: Renamed 'tf.placeholder' to 'tf.compat.v1.placeholder'
+--------------------------------------------------------------------------------
+
+--------------------------------------------------------------------------------
+Processing file 'learning/nets/fc_2layers_1024units.py'
+ outputting to 'learning2/nets/fc_2layers_1024units.py'
+--------------------------------------------------------------------------------
+
+
+--------------------------------------------------------------------------------
+
+--------------------------------------------------------------------------------
+Processing file 'learning/nets/net_builder.py'
+ outputting to 'learning2/nets/net_builder.py'
+--------------------------------------------------------------------------------
+
+
+--------------------------------------------------------------------------------
+
+--------------------------------------------------------------------------------
+Processing file 'learning/nets/fc_2layers_gated_1024units.py'
+ outputting to 'learning2/nets/fc_2layers_gated_1024units.py'
+--------------------------------------------------------------------------------
+
+11:18: INFO: Changing tf.contrib.layers xavier initializer to a tf.compat.v1.keras.initializers.VarianceScaling and converting arguments.
+
+12:29: INFO: Changing tf.contrib.layers xavier initializer to a tf.compat.v1.keras.initializers.VarianceScaling and converting arguments.
+
+15:9: INFO: Renamed 'tf.variable_scope' to 'tf.compat.v1.variable_scope'
+24:13: INFO: Renamed 'tf.variable_scope' to 'tf.compat.v1.variable_scope'
+25:22: INFO: Renamed 'tf.layers.dense' to 'tf.compat.v1.layers.dense'
+30:13: INFO: Renamed 'tf.variable_scope' to 'tf.compat.v1.variable_scope'
+40:32: INFO: Renamed 'tf.layers.dense' to 'tf.compat.v1.layers.dense'
+43:64: INFO: tf.zeros_initializer requires manual check. Initializers no longer have the dtype argument in the constructor or partition_info argument in the __call__ method.
+The calls have been converted to compat.v1 for safety (even though they may already have been correct).
+43:64: INFO: Renamed 'tf.zeros_initializer' to 'tf.compat.v1.zeros_initializer'
+46:33: INFO: Renamed 'tf.layers.dense' to 'tf.compat.v1.layers.dense'
+49:64: INFO: tf.zeros_initializer requires manual check. Initializers no longer have the dtype argument in the constructor or partition_info argument in the __call__ method.
+The calls have been converted to compat.v1 for safety (even though they may already have been correct).
+49:64: INFO: Renamed 'tf.zeros_initializer' to 'tf.compat.v1.zeros_initializer'
+--------------------------------------------------------------------------------
+
+--------------------------------------------------------------------------------
+Processing file 'learning/nets/__init__.py'
+ outputting to 'learning2/nets/__init__.py'
+--------------------------------------------------------------------------------
+
+
+--------------------------------------------------------------------------------
+
