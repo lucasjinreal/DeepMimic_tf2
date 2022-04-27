@@ -1,7 +1,11 @@
 # DeepMimic
 
 This is a forked version of deepmimic, mainly for my research on motion generation area. 
+Some modifications are:
 
+- [x] Add tensorflow 2.8+ support;
+- [x] repo size smaller, if you want checkpoint please download original repo;
+- [ ] Provide a simpler script to build `DeepMimicCore`;
 
 
 
